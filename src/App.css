@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */
+/* -----------------------RESET---------------------------- */
+
+*,
+*::after, *::before {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body, h1, h2, h3, h4, h5, h6, p, figure, picture {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  line-height: 1.5;
   min-height: 100vh;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* ACCESSIBILITY: remove animations for those who have turned them off */
+
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */
+/* -----------------------UTILITIES------------------------ */
+
+/* -----------------------UTILITY RESET---------------------------- */
+.flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: var(--gap, 1rem);
 }
 
-.App-link {
-  color: #61dafb;
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem;
 }
+
+/* screen reader only */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* -----------------------UTILITY RESET END---------------------------- */
