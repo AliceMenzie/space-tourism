@@ -1,12 +1,17 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 function NavBar() {
-    return (
-        <div>
-            00 Home 01 Destination 02 Crew 03 Technology
-            
-        </div>
-    )
+  return (
+    <div>
+      <ul>
+        <li><Link to='/'>00 Home</Link></li>
+        <li><Link to='/destination'>01 Destination</Link></li>
+        <li><Link to='/crew'>02 Crew</Link></li>
+        <li> <Link to='/technology'>03 Technology</Link></li>
+      </ul>
+    </div>
+  );
 }
 
-export default NavBar
+export default NavBar;
