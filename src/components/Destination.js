@@ -1,6 +1,6 @@
 import data from './data/data.json';
 
-export default function Destinations() {
+export default function Destination() {
 
 
   return (

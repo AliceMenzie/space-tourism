@@ -1,16 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {} from '../'
 
 function NavBar() {
   return (
-    <div>
-      <ul>
-        <li><Link to='/'>00 Home</Link></li>
-        <li><Link to='/destination'>01 Destination</Link></li>
-        <li><Link to='/crew'>02 Crew</Link></li>
-        <li> <Link to='/technology'>03 Technology</Link></li>
+      <header className="primary-header flex">
+          <div>
+          <img src="/assets/shared/logo.svg" alt='logo' />
+          </div>
+
+    <nav >
+      <ul className="primary-navigation underline-indicators flex">
+        <li><Link className='ff-sans-cond uppercase text-white letter-spacing-2' to='/'><span>00</span>Home</Link></li>
+        <li><Link className='ff-sans-cond uppercase text-white letter-spacing-2' to='/destination'><span>01</span>Destination</Link></li>
+        <li><Link className='ff-sans-cond uppercase text-white letter-spacing-2'to='/crew'><span>02</span>Crew</Link></li>
+        <li> <Link className='ff-sans-cond uppercase text-white letter-spacing-2'to='/technology'><span>03</span>Technology</Link></li>
       </ul>
-    </div>
+    </nav>
+    </header>
   );
 }
 

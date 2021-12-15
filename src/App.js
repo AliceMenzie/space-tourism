@@ -9,26 +9,17 @@ import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <div>
+    <>
       <Router>
-        <NavBar />
+        {/* <NavBar /> */}
         <Routes>
-          <Route path="/" element={<Home/>}>
-            
-          </Route>
-          <Route path="/destination" element={<Destination/>}>
-            
-          </Route>
-          <Route path="/crew" element={<Crew/>}>
-            
-          </Route>
-          <Route path="/technology" element={<Technology/>}>
-            
-          </Route>
-          {/* <Destinations /> */}
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/destination" element={<Destination />}></Route>
+          <Route path="/crew" element={<Crew />}></Route>
+          <Route path="/technology" element={<Technology />}></Route>
         </Routes>
       </Router>
-    </div>
+    </>
   );
 }
 
