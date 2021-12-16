@@ -158,12 +158,6 @@
   color: hsl(var(--clr-white));
 }
 
-.box {
-  background: lightblue;
-  padding: 3rem;
-  margin-top: auto;
-}
-
 /* typography */
 
 .ff-serif {
@@ -272,11 +266,95 @@
 }
 
 .primary-navigation {
-  --gap: 8rem;
-  list-style: none;
   --underline-gap: 2rem;
+  list-style: none;
   padding: 0;
   margin: 0;
+  background: hsl( var(--clr-dark) / 0.95);
+  
+}
+
+/* firefox does support glassmophism yet*** */
+@supports (backdrop-filter: blur(1rem)) {
+  .primary-navigation {
+      background: hsl( var(--clr-white) / 0..05);
+      backdrop-filter: blur(1.5rem);
+  }
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+@media (max-width: 35rem) {
+  .primary-navigation {
+      --underline-gap: 0.5rem;
+      position: fixed;
+      z-index: 1000;
+      inset: 0 0 0 30%;
+      list-style: none;
+      padding: min(20rem, 15vh) 2rem;
+      margin: 0;
+      flex-direction: column;
+      transform: translateX(0);
+  }
+
+  .open {
+    --underline-gap: 0.5rem;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+    list-style: none;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+    transform: translateX(100%);
+    /* animation not working on background */
+    /* transition: transform 500ms ease-in-out; */
+}
+/* attribute selector --- styles aren't carrying through */
+/* .mobile-nav-toggle[aria-expanded="true"] {
+  background-image: url("./components/images/home/icon-close.svg");
+} */
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    right: 1rem;
+    top: 2rem;
+    background: transparent;
+    border: 0;
+    background-image: url("./components/images/home/icon-hamburger.svg");
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+}
+  .mobile-nav-toggled {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    right: 1rem;
+    top: 2rem;
+    background: transparent;
+    border: 0;
+    background-image: url("./components/images/home/icon-close.svg");
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+}
+
+  .primary-navigation.underline-indicators > .active {
+    border: 0;
+ }
+
+ /* this will show up when you tab through */
+ .mobile-nav-toggle:focus-visible {
+  outline: 5px solid white;
+  outline-offset: 5px;
+}
+
+
 }
 
 .primary-navigation a {
@@ -289,10 +367,10 @@
 }
 
 .underline-indicators > * {
+  cursor: pointer;
   padding: var(--underline-gap, 1rem) 0;
   border: 0;
-  cursor: pointer;
-  border-bottom: 0.2rem solid hsl(var(--clr-white));
+  border-bottom: .2rem solid hsl( var(--clr-white) / 0 );
 }
 
 .underline-indicators > *:hover,
