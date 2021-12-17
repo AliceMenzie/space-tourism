@@ -134,6 +134,35 @@
   border: 0;
 }
 
+.skip-to-main-content:focus {
+    position: relative;
+  width: max-content;
+  height: auto;
+  clip: 0;
+  background: hsl( var(--clr-white) );
+    color: hsl( var(--clr-dark) );
+    padding: .5em 1em;
+    margin-inline: auto;
+  
+} 
+
+/* didn't work for me skip content animation */
+
+/* .skip-to-main-content {
+  position: absolute;
+  z-index: 9999;
+  background: hsl( var(--clr-white) );
+  color: hsl( var(--clr-dark) );
+  padding: .5em 1em;
+  margin-inline: auto;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in;
+}
+
+.skip-to-main-content:focus {
+  transform: translateY(0);
+} */
+
 /* UTILITY RESET END */
 
 /* colours */
@@ -478,6 +507,7 @@
   background-size: cover;
   background-position: bottom center;
   background-image: url("./components/images/home/background-home-mobile.jpg");
+  height: 100vh;
 }
 
 @media (min-width: 35em) {
@@ -485,7 +515,9 @@
     background-size: cover;
     background-position: center center;
     background-image: url("./components/images/home/background-home-tablet.jpg");
+    height: 100vh;
   }
+
 }
 
 @media (min-width: 45em) {
@@ -493,5 +525,21 @@
     background-size: cover;
     background-position: bottom center;
     background-image: url("./components/images/home/background-home-desktop.jpg");
+  }
+
+  .grid-container {
+    /* height: 100vh; */
+    text-align: center;
+    border: 5px solid limegreen;
+    display: grid;
+    place-items: center;
+    padding-inline: 1rem;
+  }
+
+  .grid-container--home {
+    padding-bottom: 6rem;
+    align-self: center;
+    justify-self: center;
+    height: 70vh;
   }
 }

@@ -11,6 +11,7 @@ function App() {
   return (
     <>
       <Router>
+        <a className="skip-to-main-content sr-only" href="#main">Skip to main content</a> 
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
